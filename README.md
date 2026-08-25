@@ -53,8 +53,8 @@ C:\Program Files (x86)\Steam\steamapps\common\KINGDOM HEARTS -HD 1.5+2.5 ReMIX-
 ```
 
 3. Replace `KH2ModMenu.dll` with the v0.5.0 copy.
-4. `dbghelp.dll` is included for completeness and is byte for byte the same confirmed working proxy from v0.2.0.
-5. Keep Steam running and launch the game the same way that already worked for v0.2.0.
+4. `dbghelp.dll` is included for completeness
+5. Keep Steam running and launch the game with Luvvy Launcher
 6. Select KH2 if Steam shows the collection menu.
 7. Press `F10`.
 
