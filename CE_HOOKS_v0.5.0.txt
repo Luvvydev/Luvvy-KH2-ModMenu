@@ -1,0 +1,30 @@
+Luvvy KH2 Mod Menu v0.5.0 CE hook validation
+
+Target: KINGDOM HEARTS II FINAL MIX.exe, Steam 1.0.0.2
+Exact target SHA256: 9002b2de6a1f91a790bd0673de125d1cf833f7942bfec827cdcf6ba64d5849ed
+
+One Hit Kill
+RVA: 0x003C0870
+Expected original: 44 03 CA 44 3B C8
+Source behavior: Gear2 defense hook from supplied KINGDOM HEARTS II FINAL MIX.CT
+Implementation: reversible rel32 jump to a near executable cave. Player path runs original add/cmp. Enemy path reproduces the table's forced lower-bound result.
+
+Instant Haste
+RVA validation site: 0x003D6986
+Expected original: F3 0F 59 89 0C 02 00 00
+Source behavior: Gear2 instantHaste from supplied KINGDOM HEARTS II FINAL MIX.CT
+Implementation: verifies the CE instruction, captures the live player +0x20C haste field, writes 100.0 while enabled, restores captured value when possible. No instruction patch is required.
+
+Free Command
+RVA: 0x00402163
+Expected original: 88 47 05 48 8B CB 33 C0
+Patched bytes: 33 C0 88 47 05 48 8B CB
+Source behavior: Gear2 forceCommand from supplied KINGDOM HEARTS II FINAL MIX.CT
+Implementation: equivalent eight-byte reorder, forcing AL=0 before the disabled byte is written and preserving mov rcx,rbx. Restores exact original bytes on disable.
+
+Safety
+- Exact Steam build guard remains required.
+- Every hook/patch validates original runtime bytes before enabling.
+- Restore refuses to overwrite a site if another mod changed it after activation.
+- Disable + Restore All and END disable these modules before the menu DLL unloads.
+- The allocated One Hit Kill cave is intentionally left allocated after disable/unload because freeing executable memory while another game thread could still be returning through it is less safe than leaking one 4 KiB page for the rest of the process lifetime.

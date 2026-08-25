@@ -1,0 +1,8 @@
+Target executable: KINGDOM HEARTS II FINAL MIX.exe
+Platform: Steam, 64 bit
+Version: Steam 1.0.0.2
+Exact inspected file size: 8,659,216 bytes
+SHA256: 9002b2de6a1f91a790bd0673de125d1cf833f7942bfec827cdcf6ba64d5849ed
+PE timestamp: 0x669E384A
+PE SizeOfImage: 0x02C2B000
+Runtime guard also requires KH2J at RVA 0x009A98B0.

@@ -1,0 +1,45 @@
+Square KH2 Internal TEST_FLAG Mapping
+=====================================
+Target: Steam 1.0.0.2 exact supplied executable
+State DWORD RVA: 0x00749804
+Count: 28 bits
+
+Bit 00  anytime drive
+Bit 01  anytime magic
+Bit 02  r2 map debug
+Bit 03  skip title
+Bit 04  ignore zone
+Bit 05  test limit
+Bit 06  exception  [DANGER]
+Bit 07  gm save local
+Bit 08  stop enemy
+Bit 09  demo movie
+Bit 10  infinity item
+Bit 11  copyright
+Bit 12  onioshi
+Bit 13  clear cache  [DANGER]
+Bit 14  no gameover
+Bit 15  anytime mickey
+Bit 16  free ability
+Bit 17  gentle friend
+Bit 18  old event skip
+Bit 19  sound log
+Bit 20  no chk effect memory
+Bit 21  gm item max
+Bit 22  memory check  [DANGER]
+Bit 23  no pack read  [DANGER]
+Bit 24  snapshot X 2
+Bit 25  show version
+Bit 26  caption off
+Bit 27  words line on
+
+Reverse-engineering proof used for this build:
+* Label pointer table RVA 0x00749A90 through 0x00749B68.
+* TEST_FLAG construction loop at RVA 0x0039F065 uses index 0 through 0x1B.
+* It selects DWORD base RVA 0x00749804 and tests bit (index & 31).
+* TEST_FLAG setter at RVA 0x0039F270 uses the same DWORD base and sequential bit index.
+
+v0.4.0 menu filtering:
+* F9 switches Main / Advanced while the F10 menu is visible.
+* Main shows bits 00, 01, 03, 08, 10, 14, 15, 16, and 21.
+* The remaining diagnostic, obscure, and DANGER bits are hidden on Advanced.

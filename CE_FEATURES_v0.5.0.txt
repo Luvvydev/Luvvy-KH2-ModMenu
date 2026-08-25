@@ -1,0 +1,52 @@
+Luvvy KH2 Mod Menu v0.5.0 CE Derived Features
+================================================
+
+Source reviewed
+---------------
+KINGDOM HEARTS II FINAL MIX.CT supplied by the user.
+The older Kingdom Hearts II.CT uses a different fixed-address memory layout and is not used for Steam runtime writes.
+
+Added without new instruction hooks
+-----------------------------------
+Infinite Drive Form Duration
+EXP Gain Multiplier 2x / 4x / 8x
+Munny Gain Multiplier 2x / 4x / 8x
+Luvvy Turbo Movement
+Fly Mode
+Low Gravity
+Freeze All Minigame Timers
+Win Struggle Orbs Now
+Grandstander Combo 999 Now
+Activate All Existing Ability Slots
+
+Fly controls
+------------
+Enable Fly Mode from the Main page, then close the F10 menu.
+W A S D       camera-relative movement
+Space         up
+Ctrl          down
+Shift         faster movement
+
+Menu filtering
+--------------
+F9 toggles Main / Advanced while F10 menu is visible.
+Dangerous and obscure Square developer flags are only shown on Advanced.
+
+Intentionally not ported into v0.5.0
+------------------------------------
+One Hit Kill / Defense Capacity hook
+Instant Haste hook
+Free Command hook
+EXP AOB code cave version
+Gummi AOB multipliers
+Grandstander instruction hooks
+Other AOB code cave scripts
+
+Reason: these modify executable instructions and need a separate isolated hook module so a bad pattern or trampoline cannot destabilize the confirmed loader and F10 core.
+
+New isolated CE module in v0.5.0:
+- One Hit Kill: Gear2 defense hook, RVA 0x003C0870, original 44 03 CA 44 3B C8
+- Instant Haste: Gear2 haste site verified at RVA 0x003D6986, original F3 0F 59 89 0C 02 00 00; live haste field +0x20C forced to 100 while enabled
+- Free Command: Gear2 forceCommand site, RVA 0x00402163, original 88 47 05 48 8B CB 33 C0
+
+All three are reversible in-session. Hook/patch writes are refused if the runtime bytes do not match the inspected Steam build.
