@@ -1,26 +1,24 @@
-Luvvy KH2 Mod Menu v0.5.0
-=========================
+# Luvvy KH2 Mod Menu v0.5.0
 
-Target
-------
-KINGDOM HEARTS II FINAL MIX.exe
-Steam KINGDOM HEARTS HD 1.5+2.5 ReMIX
-Steam 1.0.0.2, 64 bit
+## TARGET
 
+`KINGDOM HEARTS II FINAL MIX.exe`
 
-Controls
---------
-F10          Show or hide the menu
-F9           Switch between Main and Advanced pages
-F6 / F7      Previous or next visible item
-F8           Toggle or run selected item
-Up / Down    Alternate selection controls
-Enter        Alternate toggle or run control
-END          Restore reversible changes and unload KH2ModMenu.dll
+Steam `KINGDOM HEARTS HD 1.5+2.5 ReMIX`
+Steam `1.0.0.2`, 64 bit
 
+## CONTROLS
 
-Core cheats
------------
+* `F10` = Show or hide the menu
+* `F9` = Switch between Main and Advanced pages
+* `F6 / F7` = Previous or next visible item
+* `F8` = Toggle or run selected item
+* `Up / Down` = Alternate selection controls
+* `Enter` = Alternate toggle or run control
+* `END` = Restore reversible changes and unload `KH2ModMenu.dll`
+
+## CORE CHEATS
+
 * Infinite HP
 * Infinite MP
 * Infinite Drive Gauge
@@ -37,30 +35,31 @@ Core cheats
 * EXP Gain Multiplier 2x / 4x / 8x CE
 * Munny Gain Multiplier 2x / 4x / 8x CE
 * Luvvy Turbo Movement CE
-* Fly Mode with camera-relative WASD movement
+* Fly Mode with camera relative WASD movement
 * Low Gravity
 * Freeze All Minigame Timers CE
 * One Hit Kill CE HOOK
-* Instant Haste, 100x MP recharge CE
-* Free Command, commands never greyed CE PATCH
+* Instant Haste, 100x MP Recharge CE
+* Free Command, Commands Never Greyed CE PATCH
 * Disable + Restore All
 
+## INSTALL
 
-
-
-Install
--------
 1. Fully close KH2.
 2. Open:
-   C:\Program Files (x86)\Steam\steamapps\common\KINGDOM HEARTS -HD 1.5+2.5 ReMIX-
-3. Replace KH2ModMenu.dll with the v0.5.0 copy.
-4. dbghelp.dll is included for completeness and is byte-for-byte the same confirmed-working proxy from v0.2.0.
+
+```text
+C:\Program Files (x86)\Steam\steamapps\common\KINGDOM HEARTS -HD 1.5+2.5 ReMIX-
+```
+
+3. Replace `KH2ModMenu.dll` with the v0.5.0 copy.
+4. `dbghelp.dll` is included for completeness and is byte for byte the same confirmed working proxy from v0.2.0.
 5. Keep Steam running and launch the game the same way that already worked for v0.2.0.
 6. Select KH2 if Steam shows the collection menu.
-7. Press F10.
+7. Press `F10`.
 
+## UNINSTALL
 
-Uninstall
----------
 Close KH2 and remove the Luvvy files if desired.
+
 No original Kingdom Hearts executable is replaced or patched on disk.
